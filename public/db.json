@@ -1,0 +1,63 @@
+[
+    {
+      "id": "1",
+      "companyName": "ABC Corporation",
+      "jobTitle": "Software Engineer",
+      "aboutPosition": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at quam vel ligula malesuada accumsan.",
+      "address": {
+        "street": "123 Main Street",
+        "city": "Cityville",
+        "province": "Stateville",
+        "postalCode": "12345"
+      }
+    },
+    {
+      "id": "2",
+      "companyName": "XYZ Tech",
+      "jobTitle": "Web Developer",
+      "aboutPosition": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at quam vel ligula malesuada accumsan.",
+      "address": {
+        "street": "456 Elm Street",
+        "city": "Townsville",
+        "province": "Stateland",
+        "postalCode": "54321"
+      }
+    },
+    {
+      "id": "3",
+      "companyName": "Tech Innovations Inc.",
+      "jobTitle": "Data Scientist",
+      "aboutPosition": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at quam vel ligula malesuada accumsan.",
+      "address": {
+        "street": "789 Oak Avenue",
+        "city": "Villageton",
+        "province": "Townland",
+        "postalCode": "98765"
+      }
+    },
+    {
+      "id": "4",
+      "companyName": "Global Solutions Ltd.",
+      "jobTitle": "UX/UI Designer",
+      "aboutPosition": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at quam vel ligula malesuada accumsan.",
+      "address": {
+        "street": "321 Pine Street",
+        "city": "Metropolis",
+        "province": "Countyville",
+        "postalCode": "56789"
+      }
+    },
+    {
+      "id": "5",
+      "companyName": "Innovative Technologies Co.",
+      "jobTitle": "Product Manager",
+      "aboutPosition": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at quam vel ligula malesuada accumsan.",
+      "address": {
+        "street": "654 Birch Road",
+        "city": "Hamletsville",
+        "province": "Districtland",
+        "postalCode": "45678"
+      }
+    }
+  ]
+  

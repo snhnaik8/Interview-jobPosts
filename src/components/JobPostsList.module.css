@@ -1,0 +1,29 @@
+
+.jobPostsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin:30px
+  }
+  
+  .cardLink {
+    text-decoration: none; 
+    text-align: center; 
+  }
+  
+  .jobCard {
+    width: 300px;
+  }
+  
+  .cardBody {
+    text-align: center; 
+  }
+  
+  .title {
+    font-weight: bold; 
+  }
+  
+  .subtitle {
+    font-weight: normal; 
+  }
+  
