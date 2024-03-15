@@ -1,14 +1,13 @@
 // import Image from "next/image";
-import styles from "./page.module.css";
 "use client";
-import { Provider } from 'react-redux';
-import store from '../redux/store';
 import JobPostsList from '@/components/JobPostsList';
+// import TestHome from "@/components/TestHome";
 
 export default function Home() {
   return (
      <main >
       <JobPostsList />
+      {/* <TestHome/> */}
     </main>  
 
   );

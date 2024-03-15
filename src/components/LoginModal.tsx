@@ -28,16 +28,18 @@ const LoginModal: React.FC<LoginModalProps> = ({ show, onHide, onLogin }) => {
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicUsername">
-            <Form.Label>Username</Form.Label>
+            <Form.Label>User Name</Form.Label>
             <Form.Control type="text" name="username" placeholder="Enter username" />
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" name="password" placeholder="Password" />
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Login
-          </Button>
+          <div className="text-center mt-3">
+            <Button variant="primary" type="submit">
+              Login
+            </Button>
+          </div>
         </Form>
       </Modal.Body>
     </Modal>

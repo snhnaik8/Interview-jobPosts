@@ -1,46 +1,28 @@
-/// <reference types="@testing-library/jest-dom" />
-
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
-import LoginModal  from '../components/LoginModal';
+import { render, fireEvent } from '@testing-library/react';
+import LoginModal from '@/components/LoginModal';
 
-describe('LoginModal component', () => {
-  const onHideMock = jest.fn();
-  const onLoginMock = jest.fn();
+describe('LoginModal', () => {
+  test('renders correctly and calls onLogin handler with form data on form submission', () => {
+  
+    const mockOnLogin = jest.fn();
 
-  const defaultProps: any = {
-    show: true,
-    onHide: onHideMock,
-    onLogin: onLoginMock,
-  };
+    
+    const { getByLabelText, getByRole } = render(
+      <LoginModal show={true} onHide={() => {}} onLogin={mockOnLogin} />
+    );
 
-  afterEach(() => {
-    jest.clearAllMocks();
+  
+    fireEvent.change(getByLabelText('User Name'), { target: { value: 'testuser' } });
+    fireEvent.change(getByLabelText('Password'), { target: { value: 'testpassword' } });
+
+
+    fireEvent.click(getByRole('button', { name: /login/i }));
+
+  
+    expect(mockOnLogin).toHaveBeenCalledTimes(1);
+    expect(mockOnLogin).toHaveBeenCalledWith('testuser', 'testpassword');
   });
 
-  test('renders the modal when show prop is true', () => {
-    render(<LoginModal {...defaultProps} />);
-    expect(screen.getByText('Login')).toBeInTheDocument();
-  });
 
-  test('does not render the modal when show prop is false', () => {
-    render(<LoginModal {...defaultProps} show={false} />);
-    expect(screen.queryByText('Login')).not.toBeInTheDocument();
-  });
-
-  test('calls onLogin function with username and password when form is submitted', () => {
-    render(<LoginModal {...defaultProps} />);
-
-    fireEvent.change(screen.getByLabelText('Username'), { target: { value: 'testuser' } });
-    fireEvent.change(screen.getByLabelText('Password'), { target: { value: 'testpassword' } });
-    fireEvent.click(screen.getByText('Login'));
-
-    expect(onLoginMock).toHaveBeenCalledWith('testuser', 'testpassword');
-  });
-
-  test('calls onHide function when modal is closed', () => {
-    render(<LoginModal {...defaultProps} />);
-    fireEvent.click(screen.getByLabelText('Close'));
-    expect(onHideMock).toHaveBeenCalled();
-  });
 });

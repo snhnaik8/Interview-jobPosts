@@ -5,11 +5,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import LoginModal from './LoginModal';
 import styles from './Header.module.css';
 import { login, logout } from '@/redux/reducer/authSlice'; // Import login and logout actions
 import { RootState } from '@/redux/store';
+
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -19,20 +20,17 @@ export default function Header() {
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
 
   const handleLogin = (username: string, password: string) => {
-    // Your login logic goes here
-    console.log('Logging in with:', username, password);
-    // For demonstration, storing both username and password in localStorage
-    localStorage.setItem('loggedInUser', JSON.stringify({ username, password }));
     dispatch(login(username)); // Dispatch login action with username
     setShowModal(false);
   };
 
   const handleLogout = () => {
-    // Your logout logic goes here
     console.log('Logging out');
-    // For demonstration, removing the username and password from localStorage
-    localStorage.removeItem('loggedInUser');
+    // For demonstration, removing the username and password from localStorage and othe stoarages
+    localStorage.removeItem('authState');
+    localStorage.removeItem('appliedJobs');
     dispatch(logout()); // Dispatch logout action
+  
   };
 
   return (

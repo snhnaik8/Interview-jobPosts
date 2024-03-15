@@ -1,4 +1,3 @@
-
 import { createSlice } from '@reduxjs/toolkit';
 
 interface UserState {
@@ -6,7 +5,7 @@ interface UserState {
 }
 
 const initialState: UserState = {
-  appliedJobs: [],
+  appliedJobs: JSON.parse(localStorage.getItem('appliedJobs') || "[]"),
 };
 
 const userSlice = createSlice({
@@ -15,6 +14,7 @@ const userSlice = createSlice({
   reducers: {
     applyJob(state, action) {
       state.appliedJobs.push(action.payload);
+      localStorage.setItem('appliedJobs', JSON.stringify(state.appliedJobs));
     },
   },
 });
